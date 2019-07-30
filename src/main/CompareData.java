@@ -5,7 +5,6 @@ public class CompareData {
 	int deadline;
 	int profit;
 
-
 	// Constructor
 	CompareData(char id, int deadline, int profit) 
 	    { 
