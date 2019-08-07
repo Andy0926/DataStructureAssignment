@@ -47,7 +47,12 @@ public class Algorithm {
 				cd[x] = new CompareData(compareData[x].id, compareData[x].deadline, compareData[x].profit);
 			}
 		}
-
+		/*
+		Use for Checking
+		for(int x = 0; x < counter; x++){
+			System.out.println(cd[x].id+"  "+cd[x].deadline+"  "+cd[x].profit);
+		}
+		*/
 		Sorted sorter = new Sorted();
 
 		// System.out.println("sort");
@@ -60,10 +65,10 @@ public class Algorithm {
 			ts.add(i);
 
 		for (int i = 0; i < counter; i++) {
-			Integer x = ts.floor(compareData[i].deadline - 1);
+			Integer x = ts.floor(cd[i].deadline - 1);
 
 			if (x != null) {
-				System.out.print(compareData[i].id + " ");
+				System.out.print(cd[i].id + " ");
 				ts.remove(x);
 			}
 		}
@@ -83,7 +88,7 @@ public class Algorithm {
 
 			} else if (data[n].endTime / 100 <= data[n].deadline) {
 				newData[newN] = new CompareData(data[n].id, data[n].deadline, data[n].profit);
-				// System.out.println("Correct Data");
+				 //System.out.println("Correct Data");
 				return ValidateDeadline(data, newData, n + 1, n + 1);
 			}
 			return newData;

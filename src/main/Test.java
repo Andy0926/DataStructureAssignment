@@ -10,11 +10,11 @@ public class Test {
 		CompareData[] newData = new CompareData[nObject];
 		Algorithm algo = new Algorithm();
         
-		data[0] = new Data('a', 1, 99, 1000, 100); 
-        data[1] = new Data('b', 10, 100, 900, 1000); 
-        data[2] = new Data('c', 9, 27, 1400, 200); 
-        data[3] = new Data('d', 8, 25, 1700, 800); 
-        data[4] = new Data('e', 2, 15, 1900, 300); 
+		data[0] = new Data('a', 2, 70, 100, 200); 
+        data[1] = new Data('b', 10, 4, 900, 1000); 
+        data[2] = new Data('c', 3, 70, 200, 300); 
+        data[3] = new Data('d', 2, 80, 100, 200); 
+        data[4] = new Data('e', 2, 90, 100, 200); 
         
 		algo.printJobScheduling(algo.ValidateDeadline(data, newData, n, newN), nObject);
         
