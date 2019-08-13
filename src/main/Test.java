@@ -1,3 +1,10 @@
+/** 
+ * Assumption:
+ * There are a total of 100 tasks are available for employees to do in a month (30days)
+ * The tasks will be distributed among 10 employees and will work together to complete the tasks
+ * Eg: A task's Start Time is on 1/7/2019 and the End Time is on 30/7/2019. 
+ * 	  The deadline for this task will be 30
+ */
 package main;
 import java.util.Random;
 public class Test {
@@ -5,7 +12,7 @@ public class Test {
 	public static void main(String[] args) {
 
 	    Random rand = new Random();
-		final int nObject = 200;
+		final int nObject = 20;
 		final int n = 0;
 		Data[] data = new Data[nObject];
 		CompareData[] newData = new CompareData[nObject];
@@ -31,6 +38,7 @@ public class Test {
 		if (n <= data.length - 1) {
 			data[n].startTime = rand.nextInt(30) + 1;
 			data[n].endTime = rand.nextInt(30) + 1;
+			data[n].deadline = data[n].endTime;
 			data[n].id = Integer.toString(n + 1);
 			data[n].profit = rand.nextInt(100) + 1;
 
