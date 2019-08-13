@@ -25,7 +25,7 @@ public class Algorithm {
 		}
 	}
 
-	public void printJobScheduling(CompareData[] compareData, int n) {
+	public void printJobScheduling(CompareData[] compareData, int n, Data[] data) {
 		// Creating object of Sorted class
 
 		int counter = 0;
@@ -55,8 +55,17 @@ public class Algorithm {
 		*/
 		Sorted sorter = new Sorted();
 
-		// System.out.println("sort");
+		// Sort the cd.profit from highest to lowest
 		Arrays.sort(cd, sorter);
+
+
+		// for (int z = 0; z < cd.length; z++) {
+
+		// System.out.print(cd[z].id + " " + cd[z].deadline + " " + cd[z].profit);
+		// System.out.println();
+
+		// }
+
 
 		// Creating TreeSet Object
 		TreeSet<Integer> ts = new TreeSet<>();
@@ -69,6 +78,14 @@ public class Algorithm {
 
 			if (x != null) {
 				System.out.print(cd[i].id + " ");
+				
+				for (int z = 0; z < data.length; z++) {
+					if (data[z].id == cd[i].id)
+						System.out.print(data[z].deadline + "          " + data[z].profit + "  " + data[z].startTime
+								+ "       " + data[z].endTime);
+
+				}
+				System.out.println();
 				ts.remove(x);
 			}
 		}
