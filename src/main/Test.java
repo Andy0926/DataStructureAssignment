@@ -13,9 +13,11 @@ public class Test {
 
 	    Random rand = new Random();
 		final int nObject = 100;
+		final int nEmployees = 5;
 		final int finalJob = 30;
 		final int n = 0;
 		Data[] data = new Data[nObject];
+		Data[] finalData = new Data[finalJob];
 		CompareData[] newData = new CompareData[nObject];
 		CompareData[] arrangedCompareData = new CompareData[finalJob];
 		Algorithm algo = new Algorithm();
@@ -33,6 +35,8 @@ public class Test {
 		}
 		System.out.println("ID  "+"Deadline "+"Profit "+"StartTime "+"EndTime");
 		algo.MaxProfitJobList(ValidateData(data, newData,rand, n), data, arrangedCompareData);
+		algo.ArrangeDeadline(arrangedCompareData, data, finalData);
+		algo.DistributeJobList(finalData, nEmployees);
 
 
 	}

@@ -50,23 +50,13 @@ public class Algorithm {
 
 	public void MaxProfitJobList(CompareData[] compareData, Data[] data, CompareData[] arrangedCompareData) {
 		int counter = 0;
+
 		// Creating object of Sorted class
-
-
 		Sorted sorter = new Sorted();
-		SortDeadline sortDeadline = new SortDeadline();
+
 		// Sort the cd.profit from highest to lowest
 		Arrays.sort(compareData, sorter);
 
-		// List out the compareData which is sorted
-		// for (int i = 0; i < nObject; i++) {
-		// System.out.println(compareData[i].id + "@" + compareData[i].deadline + "@" +
-		// compareData[i].profit);
-		// }
-		// System.out.println("==========================================");
-
-		// Creating TreeSet Object
-		//Elliminate the notProfitable Job
 		TreeSet<Integer> ts = new TreeSet<>();
 
 		for (int i = 0; i < data.length; i++)
@@ -76,32 +66,52 @@ public class Algorithm {
 			Integer x = ts.floor(compareData[i].deadline - 1);
 
 			if (x != null) {
-				// System.out.print(compareData[i].id + " ");
 				arrangedCompareData[counter++] = compareData[i];
-				// for (int z = 0; z < data.length; z++) {
-				// 	if (data[z].id == compareData[i].id) {
-				// 		System.out.print(data[z].deadline + " " + data[z].profit + " " +
-				// 		data[z].startTime
-				// 		+ " " + data[z].endTime);
-						
-				// 	}
-				// }
-				// System.out.println();
 				ts.remove(x);
 			}
 		}
 
+	}
+
+	public void ArrangeDeadline(CompareData[] arrangedCompareData, Data[] data, Data[] finalData) {
 		// Sort the Deadline from highest to lowest
+		SortDeadline sortDeadline = new SortDeadline();
 		Arrays.sort(arrangedCompareData, sortDeadline);
-		for (int x = 0; x < arrangedCompareData.length; x++) {
+		int counter = 0;
+		//System.out.println(data.length);
+		for (int x = arrangedCompareData.length - 1; x >= 0; x--) {
 			for (int z = 0; z < data.length; z++) {
 				if (data[z].id == arrangedCompareData[x].id) {
-					System.out.print(data[z].id + "    " + data[z].deadline + "      " + data[z].profit
-							+ "      " + data[z].startTime + "     " + data[z].endTime);
+					System.out.print(data[z].id + "    " + data[z].deadline + "      " + data[z].profit + "      "
+							+ data[z].startTime + "     " + data[z].endTime);
+							// System.out.println("@"+z+"@");
+							// System.out.println(temp);
+					 finalData[counter] = data[z];
+					 counter++;
 				}
 			}
+
 			System.out.println();
 		}
+	}
 
+	public void DistributeJobList(Data[] finalData, int nEmployees) {
+		int empId = 1;
+		int counter = 0;
+		System.out.println();
+		System.out.println("Employee ID        Job ID");
+		System.out.print(empId + "        ");
+		for (int x = 0; x < finalData.length; x++) {
+
+			if (counter == 6 && empId <= nEmployees) {
+				counter = 0;
+				System.out.println();
+				System.out.print(++empId + "        ");
+
+			}
+			System.out.print(finalData[x].id + "||");
+			counter++;
+
+		}
 	}
 }
