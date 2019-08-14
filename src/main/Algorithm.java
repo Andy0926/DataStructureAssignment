@@ -66,6 +66,7 @@ public class Algorithm {
 		// System.out.println("==========================================");
 
 		// Creating TreeSet Object
+		//Elliminate the notProfitable Job
 		TreeSet<Integer> ts = new TreeSet<>();
 
 		for (int i = 0; i < data.length; i++)

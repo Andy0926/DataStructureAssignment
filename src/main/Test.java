@@ -1,6 +1,6 @@
 /** 
  * Assumption:
- * There are a total of 100 tasks are available for employees to do in a month (31days)
+ * There are a total of 100 tasks are available for employees to do in a month (30days)
  * The tasks will be distributed among 10 employees and will work together to complete the tasks
  * Eg: A task's Start Time is on 1/7/2019 and the End Time is on 30/7/2019. 
  * 	  The deadline for this task will be 30
