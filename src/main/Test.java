@@ -5,6 +5,14 @@
  * Eg: A task's Start Time is on 1/7/2019 and the End Time is on 30/7/2019. 
  * 	  The deadline for this task will be 30
  */
+
+ //Generic
+ //align output
+ //cout at the start of the program
+ //start time endtime make it as date format
+ //draw line at each data
+ //pending list
+ //throw exception
 package main;
 import java.util.Random;
 public class Test {
@@ -21,12 +29,6 @@ public class Test {
 		CompareData[] newData = new CompareData[nObject];
 		CompareData[] arrangedCompareData = new CompareData[finalJob];
 		Algorithm algo = new Algorithm();
-        
-		// data[0] = new Data('a', 2, 70, 100, 200); 
-        // data[1] = new Data('b', 10, 4, 900, 1000); 
-        // data[2] = new Data('c', 3, 70, 200, 300); 
-        // data[3] = new Data('d', 2, 80, 100, 200); 
-        // data[4] = new Data('e', 2, 90, 100, 200); 
         
 		for (int x = 0; x < nObject; x++) {
 			int startTime = rand.nextInt(30) + 1;
