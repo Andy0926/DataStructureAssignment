@@ -23,22 +23,26 @@ public class Test {
 		final int nObject = 100;
 		final int nEmployees = 5;
 		final int finalJob = 30;
+		final int queueJob = 70;
 		final int n = 0;
 		Data[] data = new Data[nObject];
 		Data[] finalData = new Data[finalJob];
+		//Data[] queueJobList = new Data[queueJob];
 		CompareData[] newData = new CompareData[nObject];
 		CompareData[] arrangedCompareData = new CompareData[finalJob];
+		CompareData[] queueCompareData = new CompareData[queueJob];
 		Algorithm algo = new Algorithm();
-        
+
 		for (int x = 0; x < nObject; x++) {
-			int startTime = rand.nextInt(30) + 1;
-			int endTime = rand.nextInt(30) + 1;
-			data[x] = new Data(Integer.toString(x + 1), endTime, rand.nextInt(100) + 1, startTime, endTime);
+			int startDate = rand.nextInt(30) + 1;
+			int endDate = rand.nextInt(30) + 1;
+			data[x] = new Data(Integer.toString(x + 1), endDate, rand.nextInt(100) + 1, startDate, endDate);
 		}
-		System.out.println("ID  "+"Deadline "+"Profit "+"StartTime "+"EndTime");
-		algo.MaxProfitJobList(ValidateData(data, newData,rand, n), data, arrangedCompareData);
+
+		algo.MaxProfitJobList(ValidateData(data, newData,rand, n), data, arrangedCompareData, queueCompareData);
 		algo.ArrangeDeadline(arrangedCompareData, data, finalData);
 		algo.DistributeJobList(finalData, nEmployees);
+		algo.ListQueueJob(data, queueCompareData);
 
 
 	}
@@ -46,14 +50,14 @@ public class Test {
 		if (n <= data.length - 1) {
 			data[n].id = Integer.toString(n + 1);
 			data[n].profit = rand.nextInt(100) + 1;
-			data[n].startTime = rand.nextInt(30) + 1;
-			data[n].endTime = rand.nextInt(30) + 1;
-			data[n].deadline = data[n].endTime;
+			data[n].startDate = rand.nextInt(30) + 1;
+			data[n].endDate = rand.nextInt(30) + 1;
+			data[n].deadline = data[n].endDate;
 			
-			if (data[n].startTime > data[n].endTime) {
+			if (data[n].startDate > data[n].endDate) {
 				return ValidateData(data, newData, rand, n);
 			} else {
-				newData[n] = new CompareData(data[n].id, data[n].endTime, data[n].profit);
+				newData[n] = new CompareData(data[n].id, data[n].endDate, data[n].profit);
 				// System.out.println("Correct Data");
 				return ValidateData(data, newData, rand, n + 1);
 			}
