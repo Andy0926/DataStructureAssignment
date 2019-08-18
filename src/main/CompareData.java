@@ -6,12 +6,12 @@ public class CompareData {
 	int profit;
 
 	// Constructor
-	CompareData(String id, int deadline, int profit) 
-	    { 
-	        this.id = id; 
-	        this.deadline = deadline; 
-	        this.profit = profit; 
-	    }
-
+	public void setId(String id){
+		this.id = id;
+	}
+	public void setCompareData(int deadline, int profit){
+		this.deadline= deadline;
+		this.profit = profit;
+	}
 
 }
