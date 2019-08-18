@@ -13,5 +13,4 @@ public class CompareData {
 		this.deadline= deadline;
 		this.profit = profit;
 	}
-
 }

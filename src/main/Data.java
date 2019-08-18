@@ -2,23 +2,22 @@ package main;
 
 public class Data<T> { 
     T id; 
-    T deadline; 
-    T profit; 
-    T startDate;
-    T endDate;
+    int deadline; 
+    int profit; 
+    int startDate;
+    int endDate;
 
-    // Constructor 
-
-    public void setId(T id){
-    	this.id = id;
+    public void setId(String id){
+    	this.id = (T) id;
     }
     
-    public void setData(T deadline, T profit, T startDate, T endDate) {
-    	 this.deadline = deadline; 
+    public void setData(int deadline, int profit, int startDate, int endDate) {
+    	 this.deadline =  deadline;    
          this.profit = profit; 
          this.startDate = startDate;
          this.endDate = endDate;
     }
+    
     public int getStartDate() {
     	return (int) startDate;
     }
