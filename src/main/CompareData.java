@@ -1,11 +1,13 @@
 package main;
 
+/**
+ * This Class is use to store the data which will be used to sort the data 
+ */
 public class CompareData {
 	String id;
 	int deadline;
 	int profit;
 
-	// Constructor
 	public void setId(String id){
 		this.id = id;
 	}

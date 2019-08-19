@@ -6,13 +6,6 @@
  * 	  The deadline for this task will be 30
  */
 
-//Generic
-//align output
-//cout at the start of the program
-//start time endtime make it as date format
-//draw line at each data
-//pending list
-//throw exception
 package main;
 
 import java.util.Random;
@@ -34,6 +27,7 @@ public class Test {
 		CompareData[] queueCompareData = new CompareData[queueJob];
 		Algorithm algo = new Algorithm();
 
+		// Create Random object array
 		try {
 			for (int x = 0; x < nJob; x++) {
 				data[x] = new Data<Object>();
@@ -56,6 +50,11 @@ public class Test {
 
 	}
 
+	/**
+	 * Recursion Check the randomized data and make sure it is valid Else
+	 * newRandomized will be generated to replace the previous data The validated
+	 * data will be put into newData object array to be sorted later
+	 */
 	public static CompareData[] ValidateData(Data<?> data[], CompareData newData[], Random rand, int n) {
 		try {
 			if (n <= data.length - 1) {

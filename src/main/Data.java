@@ -1,5 +1,8 @@
 package main;
 
+/**
+ * This class is use to store the full format data
+ */
 public class Data<T> { 
     T id; 
     int deadline; 
@@ -20,9 +23,9 @@ public class Data<T> {
     }
     
     public int getStartDate() {
-    	return (int) startDate;
+    	return startDate;
     }
     public int getEndDate() {
-    	return (int) endDate;
+    	return endDate;
     }
 } 
