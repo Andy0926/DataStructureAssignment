@@ -19,10 +19,11 @@ import java.util.Random;
 
 public class Test {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		Random rand = new Random();
 		final int nJob = 100;
-		final int nEmployees = 6;
+		final int nEmployees = 8;
 		final int finalJob = 30;
 		final int queueJob = nJob - finalJob;
 		final int n = 0;

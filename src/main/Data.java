@@ -7,7 +7,8 @@ public class Data<T> {
     int startDate;
     int endDate;
 
-    public void setId(String id){
+    @SuppressWarnings("unchecked")
+	public void setId(String id){
     	this.id = (T) id;
     }
     
